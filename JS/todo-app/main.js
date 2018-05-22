@@ -21,18 +21,21 @@ todos.forEach(todo => {
         counter += 1;
         const newToDo = document.createElement('p')
         newToDo.textContent = `${todo.task}`
-        document.querySelector("body").insertBefore(newToDo, todoButton)
+        todoButton.insertAdjacentElement('afterend', newToDo)
     }
 })
+
 const counterElement = document.createElement('h2')
 counterElement.textContent = `You have ${counter} tasks left:`
-firstPara = document.querySelector('p')
-document.querySelector("body").insertBefore(counterElement, firstPara)
-
-
+h1Title = document.querySelector('h1')
+// document.querySelector("body").insertBefore(counterElement, firstPara)
+todoButton.insertAdjacentElement('afterend', counterElement)
 
 
 document.getElementById('to-do').addEventListener('click', (e) => {
     e.target.textContent = "Todo Added"
-    
+})
+
+document.getElementById('new-todo').addEventListener("input", e => {
+    console.log(e.target.value);  
 })

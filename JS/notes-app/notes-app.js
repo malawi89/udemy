@@ -11,6 +11,7 @@ const notes = [{
 
 document.querySelector('#create-note').addEventListener('click', (e) =>{
  e.target.textContent = 'The button was clicked'
+ 
 })
 
 document.querySelector('#delete-all').addEventListener('click', (e) =>{
@@ -19,3 +20,7 @@ document.querySelector('#delete-all').addEventListener('click', (e) =>{
         note.remove()
     })
    })
+
+document.querySelector('#search').addEventListener('input', (e) => {
+   console.log(e.target.value)    
+})
